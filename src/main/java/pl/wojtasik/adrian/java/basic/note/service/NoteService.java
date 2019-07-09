@@ -17,7 +17,7 @@ public class NoteService {
     }
 
     public NoteService(NoteDao noteDao) {
-        this.noteDao = noteDao;
+           this.noteDao = noteDao;
     }
 
     public List<Note> list(){
@@ -29,9 +29,10 @@ public class NoteService {
             noteDao.create(note);
         } catch (SQLException e) {
             throw new AddNoteException("Blad podczas dodawania notatki", e);
-        } catch (TimeoutException e) {
-            throw new AddNoteException("Blad podczas tworzenia notatki", e);
         }
+//        catch (TimeoutException e) {
+//            throw new AddNoteException("Blad podczas tworzenia notatki", e);
+//        }
     }
 
     public Note read(Long id) throws ReadNoteException{

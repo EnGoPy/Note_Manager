@@ -26,7 +26,7 @@ public class NoteController {
         } catch (AddNoteException e) {
             String message = e.getMessage();
             System.out.println(message);
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 
