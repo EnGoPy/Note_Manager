@@ -17,7 +17,12 @@ public class NoteController {
     }
 
     public List<Note> allNotes(){
-        return noteService.list();
+        try {
+            return noteService.list();
+        } catch (NoteException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public void addNote(Note note){
