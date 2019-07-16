@@ -35,12 +35,16 @@ public class Note {
         this.content = content;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Note{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
-                '}';
+                "}\n";
     }
 }

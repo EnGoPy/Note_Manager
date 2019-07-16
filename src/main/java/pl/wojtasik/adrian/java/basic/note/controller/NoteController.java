@@ -1,5 +1,6 @@
 package pl.wojtasik.adrian.java.basic.note.controller;
 
+import pl.wojtasik.adrian.java.basic.note.dao.NoteFiltering;
 import pl.wojtasik.adrian.java.basic.note.dao.entity.Note;
 import pl.wojtasik.adrian.java.basic.note.exception.AddNoteException;
 import pl.wojtasik.adrian.java.basic.note.exception.NoteException;
@@ -37,7 +38,7 @@ public class NoteController {
 
     public Note read(Long id){
         try {
-            return noteService.read(id);
+            return noteService.list(id);
         } catch (ReadNoteException e) {
             e.getMessage();
 //            e.printStackTrace();
@@ -45,10 +46,19 @@ public class NoteController {
         return null;
     }
 
+    public List<Note> list(NoteFiltering noteFiltering){
+        try{
+            return noteService.list(noteFiltering);
+        }catch (ReadNoteException e){
+            e.getMessage();
+        }
+        return null;
+    }
+
     public void addNoteAndReadNote(){
         try {
             noteService.create(new Note());
-            noteService.read(10L);
+            noteService.list(10L);
         } catch (NoteException e) {
             e.getMessage();
 //            e.printStackTrace();

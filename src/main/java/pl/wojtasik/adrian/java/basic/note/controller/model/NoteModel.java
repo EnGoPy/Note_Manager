@@ -2,6 +2,7 @@ package pl.wojtasik.adrian.java.basic.note.controller.model;
 
 public class NoteModel {
 
+
     private String title;
     private String content;
 

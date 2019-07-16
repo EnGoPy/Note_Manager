@@ -1,6 +1,7 @@
 package pl.wojtasik.adrian.java.basic.note.service;
 
 import pl.wojtasik.adrian.java.basic.note.dao.NoteDao;
+import pl.wojtasik.adrian.java.basic.note.dao.NoteFiltering;
 import pl.wojtasik.adrian.java.basic.note.dao.entity.Note;
 import pl.wojtasik.adrian.java.basic.note.exception.AddNoteException;
 import pl.wojtasik.adrian.java.basic.note.exception.NoteException;
@@ -31,14 +32,28 @@ public class NoteService {
         }
     }
 
-    public Note read(Long id) throws ReadNoteException{
+    public Note list(Long id) throws ReadNoteException{
         try {
-            return noteDao.read(id);
+            if(noteDao.read(id)!=null){
+                return noteDao.read(id);
+            }else{
+                System.out.println("There is no row numbered "+id);
+            }
         } catch (NoteException e) {
             e.printStackTrace();
         }
         return null;
     }
+
+    public List<Note> list(NoteFiltering noteFiltering) throws ReadNoteException{
+        try{
+            return noteDao.list(noteFiltering);
+        } catch (NoteException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
 
 }

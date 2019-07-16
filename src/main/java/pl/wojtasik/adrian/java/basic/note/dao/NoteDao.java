@@ -12,48 +12,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class NoteDao {
 
-    private static final String READ_NOTE = "";
-    private static final String NOTE_TITLE_COLUMN = "title";
-    private static final String NOTE_CONTENT_COLUMN = "content";
-    private static final String LIST_NOTES = "";
     private Connection connection;
     private List<Note> notes;
 
     public NoteDao() {
         this.notes = new ArrayList<Note>();
-    }
-
-    public List<Note> list(NoteFiltering filtering) {
-
-//        SELECT column_name(s)
-//                FROM table_name
-//        WHERE column_name BETWEEN ? AND ?;
-
-        //PreparedStatement statement ...
-        //statement.setInt( filtering.getStart());
-        //statement.setInt( filtering.getOffset());
-        return null;
-    }
-
-    public List<Note> list() throws NoteException{
-        List<Note> notes= new ArrayList<>();
-        try{
-            this.connection = DatabaseUtils.createConnection();
-            PreparedStatement statement = connection.prepareStatement(LIST_NOTES);
-            ResultSet resultSet = statement.executeQuery();
-            while (resultSet.next()){
-                   Note note = new Note();
-                   note.setTitle(resultSet.getString(NOTE_TITLE_COLUMN));
-                   note.setContent(resultSet.getString(NOTE_CONTENT_COLUMN));
-                   notes.add(note);
-            }
-        }catch (SQLException e){
-            throw new NoteDatabaseAccessException("Failed to retreive notes", e);
-        }
-        return notes;
     }
 
     public void create(Note noteToAdd) throws NoteException {
@@ -62,37 +27,111 @@ public class NoteDao {
             PreparedStatement statement = connection.prepareStatement(NoteTable.CREATE_NOTE);
             statement.setString(1, noteToAdd.getTitle());
             statement.setString(2, noteToAdd.getContent());
+//            System.out.println(statement);
             statement.execute();
         } catch (SQLException e) {
             throw new NoteDatabaseAccessException("Failed to create Note", e);
         } catch (ConnectionException e) {
             throw new ConnectionException("Failed to connect to DB", e);
         }
-
     }
+
+//    public Note find(String noteTitle) throws NoteException {
+//        Note note = null;
+//        try {
+//            this.connection = DatabaseUtils.createConnection();
+//            PreparedStatement statement = connection.prepareStatement(NoteTable.FIND_NOTE);
+//            statement.setString(1, noteTitle);
+//            ResultSet resultSet = statement.executeQuery();
+//            if (resultSet.next()) {
+//                String title = resultSet.getString(NoteTable.NOTE_COLUMN_TITLE);
+//                String content = resultSet.getString(NoteTable.NOTE_COLUMN_CONTENT);
+//                note = new Note(title, content);
+//            }
+//        } catch (SQLException e) {
+//            throw new NoteDatabaseAccessException("Failed to find Note", e);
+//        } catch (ConnectionException e) {
+//            throw new ConnectionException("Failed to connect to DB", e);
+//        }
+//        return note;
+//    }
+
+    public List<Note> list(NoteFiltering filtering) throws NoteException {
+        List<Note> list = new ArrayList<>();
+        try {
+            this.connection = DatabaseUtils.createConnection();
+            PreparedStatement statement = connection.prepareStatement(NoteTable.FIND_NOTE_BETWEEN);
+            statement.setInt(1, filtering.getStart());
+            statement.setInt(2, filtering.getStart()+filtering.getOffset());
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                Note note = new Note();
+                note.setTitle(resultSet.getString(NoteTable.NOTE_COLUMN_TITLE));
+                note.setContent(resultSet.getString(NoteTable.NOTE_COLUMN_CONTENT));
+                note.setId(resultSet.getLong(NoteTable.NOTE_COLUMN_ID));
+                list.add(note);
+            }
+        } catch (ConnectionException e) {
+            throw new ConnectionException("Failed to connect to DB", e);
+        } catch (SQLException e) {
+            throw new NoteDatabaseAccessException("Failed to query by number ranges", e);
+        }
+        return list;
+    }
+
+    public List<Note> list() throws NoteException {
+        List<Note> notes = new ArrayList<>();
+        try {
+            this.connection = DatabaseUtils.createConnection();
+            PreparedStatement statement = connection.prepareStatement(NoteTable.LIST_NOTES);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                Note note = new Note();
+                note.setTitle(resultSet.getString(NoteTable.NOTE_COLUMN_TITLE));
+                note.setContent(resultSet.getString(NoteTable.NOTE_COLUMN_CONTENT));
+                note.setId(resultSet.getLong(NoteTable.NOTE_COLUMN_ID));
+                notes.add(note);
+            }
+        } catch (SQLException e) {
+            throw new NoteDatabaseAccessException("Failed to retreive notes", e);
+        }
+        return notes;
+    }
+
 
     public Note read(Long id) throws NoteException {
         Note note = null;
         try {
             this.connection = DatabaseUtils.createConnection();
-            PreparedStatement statement = connection.prepareStatement(READ_NOTE);
+            PreparedStatement statement = connection.prepareStatement(NoteTable.READ_NOTE);
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                String title = resultSet.getString(NOTE_TITLE_COLUMN);
-                String content = resultSet.getString(NOTE_CONTENT_COLUMN);
-                note = new Note(title, content);
-//                return note;
+                String title = resultSet.getString(NoteTable.NOTE_COLUMN_TITLE);
+                String content = resultSet.getString(NoteTable.NOTE_COLUMN_CONTENT);
+                note = new Note(id, title, content);  // UWAGA! ID POBIERAM Z ARGUMENTU METODY, nie z wyniku
             }
         } catch (SQLException e) {
-            throw new NoteDatabaseAccessException("Failed to read note", e);
-        } catch (ConnectionException e){
+            throw new NoteDatabaseAccessException("Failed to list note", e);
+        } catch (ConnectionException e) {
             throw new ConnectionException("Failed to connect to DB", e);
         }
         return note;
     }
 
-
-
+    public boolean update(Long id, Note note) throws NoteException{
+        try{
+            this.connection = DatabaseUtils.createConnection();
+            PreparedStatement statement = connection.prepareStatement(NoteTable.UPDATE_NOTE_BY_ID);
+            statement.setString(1, note.getTitle());
+            statement.setString(2, note.getContent());
+            statement.setLong(3, id);
+            return statement.execute();
+        } catch (ConnectionException e) {
+            throw new ConnectionException("Failed to connect to DB", e);
+        } catch (SQLException e) {
+            throw new NoteDatabaseAccessException("Failed to update row", e);
+        }
+    }
 
 }
