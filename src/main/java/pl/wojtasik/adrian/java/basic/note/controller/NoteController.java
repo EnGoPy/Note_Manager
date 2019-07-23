@@ -1,7 +1,7 @@
 package pl.wojtasik.adrian.java.basic.note.controller;
 
+import pl.wojtasik.adrian.java.basic.note.controller.model.NoteModel;
 import pl.wojtasik.adrian.java.basic.note.dao.NoteFiltering;
-import pl.wojtasik.adrian.java.basic.note.dao.entity.Note;
 import pl.wojtasik.adrian.java.basic.note.exception.AddNoteException;
 import pl.wojtasik.adrian.java.basic.note.exception.NoteException;
 import pl.wojtasik.adrian.java.basic.note.exception.ReadNoteException;
@@ -17,7 +17,7 @@ public class NoteController {
         this.noteService = noteService;
     }
 
-    public List<Note> allNotes(){
+    public List<NoteModel> allNotes() {
         try {
             return noteService.list();
         } catch (NoteException e) {
@@ -26,9 +26,9 @@ public class NoteController {
         return null;
     }
 
-    public void addNote(Note note){
+    public void addNote(NoteModel noteModel) {
         try {
-            noteService.create(note);
+            noteService.create(noteModel);
         } catch (AddNoteException e) {
             String message = e.getMessage();
             System.out.println(message);
@@ -36,9 +36,14 @@ public class NoteController {
         }
     }
 
-    public Note read(Long id){
+    public NoteModel read(Long id) {
         try {
-            return noteService.list(id);
+            NoteModel noteModel = noteService.list(id);
+            if (noteModel != null) {
+                return noteModel;
+            } else {
+                System.out.println("There is no Note with id = " + id);
+            }
         } catch (ReadNoteException e) {
             e.getMessage();
 //            e.printStackTrace();
@@ -46,24 +51,21 @@ public class NoteController {
         return null;
     }
 
-    public List<Note> list(NoteFiltering noteFiltering){
-        try{
+    public List<NoteModel> list(NoteFiltering noteFiltering) {
+        try {
             return noteService.list(noteFiltering);
-        }catch (ReadNoteException e){
+        } catch (ReadNoteException e) {
             e.getMessage();
         }
         return null;
     }
 
-    public void addNoteAndReadNote(){
-        try {
-            noteService.create(new Note());
-            noteService.list(10L);
-        } catch (NoteException e) {
+    public void update(long id, NoteModel noteModel){
+        try{
+            noteService.update(id, noteModel);
+        } catch (ReadNoteException e){
             e.getMessage();
-//            e.printStackTrace();
         }
-
     }
 
 

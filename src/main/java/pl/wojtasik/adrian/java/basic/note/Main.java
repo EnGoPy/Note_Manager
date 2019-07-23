@@ -1,13 +1,15 @@
 package pl.wojtasik.adrian.java.basic.note;
 
 import pl.wojtasik.adrian.java.basic.note.controller.NoteController;
+import pl.wojtasik.adrian.java.basic.note.controller.model.NoteModel;
 import pl.wojtasik.adrian.java.basic.note.dao.DatabaseUtils;
 import pl.wojtasik.adrian.java.basic.note.dao.NoteDao;
 import pl.wojtasik.adrian.java.basic.note.dao.NoteFiltering;
-import pl.wojtasik.adrian.java.basic.note.dao.entity.Note;
 import pl.wojtasik.adrian.java.basic.note.exception.ConnectionException;
 import pl.wojtasik.adrian.java.basic.note.exception.NoteException;
 import pl.wojtasik.adrian.java.basic.note.service.NoteService;
+
+import java.util.List;
 
 public class Main {
 
@@ -17,26 +19,44 @@ public class Main {
 
             try {
                 DatabaseUtils.createConnection();
+                DatabaseUtils.prepareDatabase();
+                DatabaseUtils.showTables();
             } catch (NoteException e) {
                 e.printStackTrace();
             }
+
+//
             NoteDao noteDao = new NoteDao();
             NoteService noteService = new NoteService(noteDao);
             NoteController noteController = new NoteController(noteService);
 
             for(int i=1;i<=20;i++){
-                Note note  = new Note("Title nr "+i, "That's content of "+i+" note.");
-                noteController.addNote(note);
+                NoteModel noteModel  = new NoteModel("Title nr "+i, "That's content of "+i+" note.");
+                noteController.addNote(noteModel);
             }
-            System.out.println(noteController.allNotes());
-            noteController.allNotes();
+            List<NoteModel> noteModels = noteController.allNotes();
+            for (NoteModel noteModel : noteModels){
+                System.out.println(noteModel);
+            }
+//            System.out.println(notes);
+//            noteController.allNotes();
+//
+            NoteModel noteExist = noteController.read(15L);
+            System.out.println(noteExist);
 
-            System.out.println(noteController.read(15L));
-            System.out.println(noteController.read(30L));
+            NoteModel noteNotExist = noteController.read(30L);
+            System.out.println(noteNotExist);
+
+            for(NoteModel noteModel : noteController.allNotes()){
+                System.out.println(noteModel.getId()+" "+noteModel.getTitle()+" "+noteModel.getContent());
+            }
 
 
             NoteFiltering noteFiltering = new NoteFiltering(3, 10);
+            noteController.list(noteFiltering);
 
+            NoteModel noteModel = new NoteModel("TYTUL", "To powinno byc nadpisane");
+            noteController.update(10L, noteModel);
     //
 //        List<Note> list = noteDao.list();
 //        System.out.println(list);

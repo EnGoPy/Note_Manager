@@ -2,7 +2,7 @@ package pl.wojtasik.adrian.java.basic.note.controller.model;
 
 public class NoteModel {
 
-
+    private Long id;
     private String title;
     private String content;
 
@@ -12,6 +12,14 @@ public class NoteModel {
     public NoteModel(String title, String content) {
         this.title = title;
         this.content = content;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getTitle() {

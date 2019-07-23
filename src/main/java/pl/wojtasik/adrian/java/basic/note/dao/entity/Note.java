@@ -39,12 +39,16 @@ public class Note {
         this.id = id;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "Note{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
-                "}\n";
+                '}';
     }
 }

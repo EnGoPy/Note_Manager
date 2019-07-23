@@ -61,8 +61,8 @@ public class NoteDao {
         try {
             this.connection = DatabaseUtils.createConnection();
             PreparedStatement statement = connection.prepareStatement(NoteTable.FIND_NOTE_BETWEEN);
-            statement.setInt(1, filtering.getStart());
-            statement.setInt(2, filtering.getStart()+filtering.getOffset());
+            statement.setInt(1, (filtering.getStart()));
+            statement.setInt(2, (filtering.getStart() + filtering.getOffset()));
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Note note = new Note();
@@ -119,8 +119,8 @@ public class NoteDao {
         return note;
     }
 
-    public boolean update(Long id, Note note) throws NoteException{
-        try{
+    public boolean update(Long id, Note note) throws NoteException {
+        try {
             this.connection = DatabaseUtils.createConnection();
             PreparedStatement statement = connection.prepareStatement(NoteTable.UPDATE_NOTE_BY_ID);
             statement.setString(1, note.getTitle());
