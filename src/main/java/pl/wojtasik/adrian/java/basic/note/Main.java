@@ -25,7 +25,6 @@ public class Main {
                 e.printStackTrace();
             }
 
-//
             NoteDao noteDao = new NoteDao();
             NoteService noteService = new NoteService(noteDao);
             NoteController noteController = new NoteController(noteService);
@@ -38,9 +37,7 @@ public class Main {
             for (NoteModel noteModel : noteModels){
                 System.out.println(noteModel);
             }
-//            System.out.println(notes);
-//            noteController.allNotes();
-//
+
             NoteModel noteExist = noteController.read(15L);
             System.out.println(noteExist);
 

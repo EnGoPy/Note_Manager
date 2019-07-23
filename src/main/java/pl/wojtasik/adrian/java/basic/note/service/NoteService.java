@@ -68,8 +68,8 @@ public class NoteService {
         return null;
     }
 
-    public void update(Long id, NoteModel noteModel) throws ReadNoteException{
-        try{
+    public void update(Long id, NoteModel noteModel) throws ReadNoteException {
+        try {
             noteDao.update(id, NoteMapper.fromModel(noteModel));
         } catch (NoteException e) {
             e.printStackTrace();

@@ -2,27 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea438e7e-314d-4e69-98f8-686534e61c39" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/mapper/NoteMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/database.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/controller/NoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/controller/model/NoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/controller/model/NoteModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/DatabaseUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/DatabaseUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/NoteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/NoteDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/NoteTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/NoteTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/entity/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/entity/Note.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/service/NoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/service/NoteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/controller/NoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/controller/NoteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/controller/model/NoteModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/controller/model/NoteModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/dao/DatabaseUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/dao/DatabaseUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/dao/NoteDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/dao/NoteDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/dao/NoteTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/dao/NoteTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/dao/entity/Note.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/dao/entity/Note.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/service/NoteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/wojtasik/adrian/java/basic/note/service/NoteService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,14 +22,15 @@
     <session id="1051379050">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -53,33 +38,35 @@
           <entry key="MF" value="1" />
           <entry key="class" value="8" />
           <entry key="db" value="3" />
+          <entry key="gitignore" value="1" />
           <entry key="iml" value="1" />
           <entry key="java" value="104" />
-          <entry key="properties" value="6" />
+          <entry key="properties" value="8" />
           <entry key="xml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="8" />
+          <entry key="Git file" value="1" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JAVA" value="104" />
           <entry key="Manifest" value="1" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Properties" value="6" />
+          <entry key="Properties" value="8" />
           <entry key="XML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="10926" />
+          <entry key="java" value="10929" />
           <entry key="properties" value="147" />
           <entry key="xml" value="66" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10926" />
+          <entry key="JAVA" value="10929" />
           <entry key="Properties" value="147" />
           <entry key="XML" value="66" />
         </counts>
@@ -91,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/NoteDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="121" column="44" selection-start-line="121" selection-start-column="44" selection-end-line="121" selection-end-column="44" />
+            <state relative-caret-position="1890">
+              <caret line="136" column="1" selection-start-line="136" selection-start-column="1" selection-end-line="136" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/NoteTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="330">
+              <caret line="22" column="176" selection-start-line="22" selection-start-column="176" selection-end-line="22" selection-end-column="176" />
             </state>
           </provider>
         </entry>
@@ -112,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="58" column="48" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
+            <state relative-caret-position="495">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -124,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/DatabaseUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="69" column="87" lean-forward="true" selection-start-line="69" selection-start-column="87" selection-end-line="69" selection-end-column="87" />
+            <state relative-caret-position="150">
+              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -136,16 +123,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/com/h2database/h2/1.4.199/h2-1.4.199.jar!/org/h2/message/DbException.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="253" column="23" lean-forward="true" selection-start-line="253" selection-start-column="23" selection-end-line="253" selection-end-column="23" />
+            <state relative-caret-position="3330">
+              <caret line="253" column="23" selection-start-line="253" selection-start-column="23" selection-end-line="253" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/controller/NoteController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
+            <state relative-caret-position="885">
               <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -155,13 +142,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/database.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/service/NoteService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="73" column="35" lean-forward="true" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+            <state relative-caret-position="304">
+              <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="41" column="4" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -198,13 +212,13 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/entity/Note.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/controller/model/NoteModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/mapper/NoteMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/DatabaseUtils.java" />
         <option value="$PROJECT_DIR$/src/main/resources/database.properties" />
         <option value="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/NoteTable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/NoteDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/service/NoteService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/controller/NoteController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/DatabaseUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/service/NoteService.java" />
       </list>
     </option>
   </component>
@@ -244,7 +258,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Production'; set:Production; class com.intellij.psi.search.scope.ProjectProductionScope">
           <expand>
@@ -351,6 +364,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -566,12 +580,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563893142703" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563896191038" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SQL_training_projects/music_DB" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
@@ -648,15 +662,15 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.2556724" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.26120642" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3291866" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3291866" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32057416" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295129" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.33779904" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.33779904" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3291866" />
@@ -853,9 +867,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/notes.db">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/notes.db" />
     <entry file="jar:///usr/lib/jvm/jdk-1.8/src.zip!/java/sql/Connection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -929,34 +941,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/h2database/h2/1.4.199/h2-1.4.199.jar!/org/h2/message/DbException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="253" column="23" lean-forward="true" selection-start-line="253" selection-start-column="23" selection-end-line="253" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/DatabaseUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="69" column="87" lean-forward="true" selection-start-line="69" selection-start-column="87" selection-end-line="69" selection-end-column="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/jdk-1.8/src.zip!/java/sql/DriverManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="246" selection-start-line="246" selection-end-line="246" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -967,57 +955,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/database.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/NoteDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        <state relative-caret-position="1890">
+          <caret line="136" column="1" selection-start-line="136" selection-start-column="1" selection-end-line="136" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/NoteTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="330">
+          <caret line="22" column="176" selection-start-line="22" selection-start-column="176" selection-end-line="22" selection-end-column="176" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="58" column="48" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
+        <state relative-caret-position="495">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/NoteDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/DatabaseUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="121" column="44" selection-start-line="121" selection-start-column="44" selection-end-line="121" selection-end-column="44" />
+        <state relative-caret-position="150">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/service/NoteService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/h2database/h2/1.4.199/h2-1.4.199.jar!/org/h2/message/DbException.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="73" column="35" lean-forward="true" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="3330">
+          <caret line="253" column="23" selection-start-line="253" selection-start-column="23" selection-end-line="253" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/controller/NoteController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
+        <state relative-caret-position="885">
           <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/database.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/wojtasik/adrian/java/basic/note/service/NoteService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="41" column="4" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
         </state>
       </provider>
     </entry>

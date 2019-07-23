@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 public class DatabaseUtils {
 
-    private static final Logger LOGGER= Logger.getLogger(DatabaseUtils.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(DatabaseUtils.class.getName());
 
     private static Connection connection;
 
@@ -23,7 +23,7 @@ public class DatabaseUtils {
         if (connection == null) {
             try {
                 Properties properties = readProperties();
-                System.out.println("PROPERTIES: "+properties);
+                System.out.println("PROPERTIES: " + properties);
                 connection = DriverManager.getConnection(
                         properties.getProperty(NoteTable.URL),
                         properties.getProperty(NoteTable.USERNAME),
@@ -32,13 +32,12 @@ public class DatabaseUtils {
                 LOGGER.log(Level.INFO, "Connection acquired");
             } catch (SQLException e) {
                 throw new ConnectionException("Cannot connect to DB", e);
-//            } catch (NoteDatabaseAccessException e) {
-//                throw new NoteDatabaseAccessException(e.getMessage(), e.getCause());
             }
         }
         return connection;
     }
-    public static void prepareDatabase() throws NoteException{
+
+    public static void prepareDatabase() throws NoteException {
         dropTable();
         prepareTable();
     }
@@ -96,7 +95,4 @@ public class DatabaseUtils {
             e.printStackTrace();
         }
     }
-
-
-
 }
