@@ -1,6 +1,7 @@
 pl/wojtasik/adrian/java/basic/note/exception/NoteException.class
 pl/wojtasik/adrian/java/basic/note/exception/ConnectionException.class
 pl/wojtasik/adrian/java/basic/note/dao/NoteFiltering.class
+pl/wojtasik/adrian/java/basic/note/mapper/NoteMapper.class
 pl/wojtasik/adrian/java/basic/note/dao/NoteDao.class
 pl/wojtasik/adrian/java/basic/note/controller/model/NoteModel.class
 pl/wojtasik/adrian/java/basic/note/dao/DatabaseUtils.class

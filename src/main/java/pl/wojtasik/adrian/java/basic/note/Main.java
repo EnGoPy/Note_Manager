@@ -54,7 +54,11 @@ public class Main {
 
             NoteModel noteModel = new NoteModel("TYTUL", "To powinno byc nadpisane");
             noteController.update(10L, noteModel);
-    //
+
+            NoteFiltering noteF = new NoteFiltering();
+            System.out.println(noteF.getStart());
+            System.out.println(noteF.getOffset());
+            //
 //        List<Note> list = noteDao.list();
 //        System.out.println(list);
 

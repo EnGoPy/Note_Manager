@@ -6,6 +6,7 @@
 /home/engopy/programming/Java_jacek_kurs/cli-notes/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/NoteFiltering.java
 /home/engopy/programming/Java_jacek_kurs/cli-notes/src/main/java/pl/wojtasik/adrian/java/basic/note/dao/NoteTable.java
 /home/engopy/programming/Java_jacek_kurs/cli-notes/src/main/java/pl/wojtasik/adrian/java/basic/note/exception/NoteDatabaseAccessException.java
+/home/engopy/programming/Java_jacek_kurs/cli-notes/src/main/java/pl/wojtasik/adrian/java/basic/note/mapper/NoteMapper.java
 /home/engopy/programming/Java_jacek_kurs/cli-notes/src/main/java/pl/wojtasik/adrian/java/basic/note/service/NoteService.java
 /home/engopy/programming/Java_jacek_kurs/cli-notes/src/main/java/pl/wojtasik/adrian/java/basic/note/exception/AddNoteException.java
 /home/engopy/programming/Java_jacek_kurs/cli-notes/src/main/java/pl/wojtasik/adrian/java/basic/note/controller/model/NoteModel.java

@@ -15,11 +15,7 @@ import java.util.List;
 public class NoteDao {
 
     private Connection connection;
-    private List<Note> notes;
 
-    public NoteDao() {
-        this.notes = new ArrayList<Note>();
-    }
 
     public void create(Note noteToAdd) throws NoteException {
         try {
