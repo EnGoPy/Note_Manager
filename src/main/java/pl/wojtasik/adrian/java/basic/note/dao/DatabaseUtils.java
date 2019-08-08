@@ -28,7 +28,6 @@ public class DatabaseUtils {
                         properties.getProperty(NoteTable.URL),
                         properties.getProperty(NoteTable.USERNAME),
                         properties.getProperty(NoteTable.PASSWORDS));
-
                 LOGGER.log(Level.INFO, "Connection acquired");
             } catch (SQLException e) {
                 throw new ConnectionException("Cannot connect to DB", e);
@@ -54,7 +53,6 @@ public class DatabaseUtils {
 
     private static Properties readProperties() {
         Properties properties = new Properties();
-
         try {
             properties.load(DatabaseUtils.class.getClassLoader().getResourceAsStream("database.properties"));
         } catch (IOException e) {

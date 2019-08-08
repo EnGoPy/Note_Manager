@@ -4,12 +4,12 @@ public class NoteFiltering {
     private int start;
     private int offset;
 
-    public NoteFiltering(){
-        this(1,1);
+    public NoteFiltering() {
+        this(1, 1);
     }
-w
+
     public NoteFiltering(int start, int offset) {
-        if(start>=0 && offset>=0){
+        if (start >= 0 && offset >= 0) {
             this.start = start;
             this.offset = offset;
         }

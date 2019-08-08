@@ -20,10 +20,12 @@ public class NoteDao {
     public void create(Note noteToAdd) throws NoteException {
         try {
             this.connection = DatabaseUtils.createConnection();
+            List<Note> noteList = list();
+            recount(noteList);
             PreparedStatement statement = connection.prepareStatement(NoteTable.CREATE_NOTE);
-            statement.setString(1, noteToAdd.getTitle());
-            statement.setString(2, noteToAdd.getContent());
-//            System.out.println(statement);
+            statement.setString(1, String.valueOf(noteList.size() + 1));
+            statement.setString(2, noteToAdd.getTitle());
+            statement.setString(3, noteToAdd.getContent());
             statement.execute();
         } catch (SQLException e) {
             throw new NoteDatabaseAccessException("Failed to create Note", e);
@@ -31,26 +33,6 @@ public class NoteDao {
             throw new ConnectionException("Failed to connect to DB", e);
         }
     }
-
-//    public Note find(String noteTitle) throws NoteException {
-//        Note note = null;
-//        try {
-//            this.connection = DatabaseUtils.createConnection();
-//            PreparedStatement statement = connection.prepareStatement(NoteTable.FIND_NOTE);
-//            statement.setString(1, noteTitle);
-//            ResultSet resultSet = statement.executeQuery();
-//            if (resultSet.next()) {
-//                String title = resultSet.getString(NoteTable.NOTE_COLUMN_TITLE);
-//                String content = resultSet.getString(NoteTable.NOTE_COLUMN_CONTENT);
-//                note = new Note(title, content);
-//            }
-//        } catch (SQLException e) {
-//            throw new NoteDatabaseAccessException("Failed to find Note", e);
-//        } catch (ConnectionException e) {
-//            throw new ConnectionException("Failed to connect to DB", e);
-//        }
-//        return note;
-//    }
 
     public List<Note> list(NoteFiltering filtering) throws NoteException {
         List<Note> list = new ArrayList<>();
@@ -94,6 +76,22 @@ public class NoteDao {
         return notes;
     }
 
+    private void recount(List<Note> notes) {
+        if (notes.size() != 0) {
+            long counter = 1;
+            for (Note note : notes) {
+                long tempId = note.getId();
+                note.setId(counter);
+                try {
+                    update(tempId, note);
+                } catch (NoteException e) {
+                    e.printStackTrace();
+                }
+                counter++;
+            }
+        }
+    }
+
 
     public Note read(Long id) throws NoteException {
         Note note = null;
@@ -105,7 +103,8 @@ public class NoteDao {
             if (resultSet.next()) {
                 String title = resultSet.getString(NoteTable.NOTE_COLUMN_TITLE);
                 String content = resultSet.getString(NoteTable.NOTE_COLUMN_CONTENT);
-                note = new Note(id, title, content);  // UWAGA! ID POBIERAM Z ARGUMENTU METODY, nie z wyniku
+                long noteId = resultSet.getLong(NoteTable.NOTE_COLUMN_ID);
+                note = new Note(noteId, title, content);  // UWAGA! ID POBIERAM Z BAZY
             }
         } catch (SQLException e) {
             throw new NoteDatabaseAccessException("Failed to list note", e);
@@ -115,19 +114,34 @@ public class NoteDao {
         return note;
     }
 
-    public boolean update(Long id, Note note) throws NoteException {
+    public void update(Long id, Note note) throws NoteException {
         try {
             this.connection = DatabaseUtils.createConnection();
             PreparedStatement statement = connection.prepareStatement(NoteTable.UPDATE_NOTE_BY_ID);
             statement.setString(1, note.getTitle());
             statement.setString(2, note.getContent());
-            statement.setLong(3, id);
-            return statement.execute();
+            statement.setLong(3, note.getId());
+            statement.setLong(4, id);
+            statement.execute();
         } catch (ConnectionException e) {
             throw new ConnectionException("Failed to connect to DB", e);
         } catch (SQLException e) {
             throw new NoteDatabaseAccessException("Failed to update row", e);
         }
     }
+
+    public void delete(Long id) throws NoteException {
+        try {
+            this.connection = DatabaseUtils.createConnection();
+            PreparedStatement statement = connection.prepareStatement(NoteTable.DELETE_NOTE_BY_ID);
+            statement.setLong(1, id);
+            statement.execute();
+        } catch (SQLException e) {
+            throw new NoteDatabaseAccessException("Failed to delete row", e);
+        } catch (ConnectionException e) {
+            throw new ConnectionException("Failed to connect to DB", e);
+        }
+    }
+
 
 }

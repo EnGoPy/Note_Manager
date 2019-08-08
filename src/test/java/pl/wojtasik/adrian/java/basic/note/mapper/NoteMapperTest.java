@@ -2,6 +2,7 @@ package pl.wojtasik.adrian.java.basic.note.mapper;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.mockito.Mockito;
 import pl.wojtasik.adrian.java.basic.note.controller.model.NoteModel;
 import pl.wojtasik.adrian.java.basic.note.dao.entity.Note;
 
@@ -12,7 +13,8 @@ public class NoteMapperTest {
     @Test
     public void givenNewNote_whenNoteMapperFromEntity_thenNoteModelIsNotNull() {
         //Given
-        Note note = new Note();
+        Note note = Mockito.mock(Note.class);
+//        Note note = new Note();
         //When
         NoteModel noteModel = NoteMapper.fromEntity(note);
         //Then
@@ -23,7 +25,8 @@ public class NoteMapperTest {
     @Test
     public void givenNewNoteModel_whenNoteMapperFromModel_thenNoteIsNotNull() {
         //Given
-        NoteModel noteModel = new NoteModel();
+        NoteModel noteModel = Mockito.mock(NoteModel.class);
+//        NoteModel noteModel = new NoteModel();
         //When
         Note note = NoteMapper.fromModel(noteModel);
         //Then
