@@ -19,7 +19,7 @@ public class DatabaseUtils {
     private DatabaseUtils() {
     }
 
-    public static Connection createConnection() throws NoteException {
+    public static Connection getConnection() throws NoteException {
         if (connection == null) {
             try {
                 Properties properties = readProperties();
@@ -28,6 +28,7 @@ public class DatabaseUtils {
                         properties.getProperty(NoteTable.URL),
                         properties.getProperty(NoteTable.USERNAME),
                         properties.getProperty(NoteTable.PASSWORDS));
+                connection.setAutoCommit(Boolean.valueOf(properties.getProperty(NoteTable.AUTO_COMMIT, "false")));
                 LOGGER.log(Level.INFO, "Connection acquired");
             } catch (SQLException e) {
                 throw new ConnectionException("Cannot connect to DB", e);
@@ -39,6 +40,13 @@ public class DatabaseUtils {
     public static void prepareDatabase() throws NoteException {
         dropTable();
         prepareTable();
+        tableIdCounterReset();
+        showTables();
+    }
+
+    public static void resetDatabase() {
+        truncateTable();
+        tableIdCounterReset();
     }
 
     public static void closeConnection() throws ConnectionException {
@@ -65,7 +73,9 @@ public class DatabaseUtils {
     private static void prepareTable() throws NoteDatabaseAccessException {
         try {
             PreparedStatement statement = connection.prepareStatement(NoteTable.CREATE_TABLE);
+            System.out.println("Create Table called");
             statement.execute();
+            connection.commit();
         } catch (SQLException e) {
             throw new NoteDatabaseAccessException("Cannot create table", e);
         }
@@ -86,11 +96,33 @@ public class DatabaseUtils {
 
     private static void dropTable() throws NoteDatabaseAccessException {
         try {
-            String query = "DROP TABLE " + NoteTable.NOTE_TABLE_NAME;
+            String queryTruncate = "DROP TABLE " + NoteTable.NOTE_TABLE_NAME;
             Statement statement = connection.createStatement();
-            statement.execute(query);
+            statement.execute(queryTruncate);
+            connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    private static void truncateTable() {
+        try {
+            Statement statement = connection.createStatement();
+            statement.execute(NoteTable.QUERY_TRUNCATE_TABLE);
+            connection.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void tableIdCounterReset() {
+        try {
+            Statement statement = connection.createStatement();
+            statement.execute(NoteTable.QUERY_RESTART_ID_COLUMN);
+            connection.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 }

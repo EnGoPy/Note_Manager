@@ -18,7 +18,7 @@ public class Main {
         try {
 
             try {
-                DatabaseUtils.createConnection();
+                DatabaseUtils.getConnection();
                 DatabaseUtils.prepareDatabase();
                 DatabaseUtils.showTables();
             } catch (NoteException e) {

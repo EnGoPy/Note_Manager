@@ -30,7 +30,6 @@ public class NoteService {
         for (Note note : notes) {
             noteModels.add(NoteMapper.fromEntity(note));
         }
-
         return noteModels;
     }
 

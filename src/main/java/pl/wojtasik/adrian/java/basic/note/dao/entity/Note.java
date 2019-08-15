@@ -9,7 +9,6 @@ public class Note {
     }
 
     public Note(String title, String content) {
-        this.id = null;
         this.title = title;
         this.content = content;
     }

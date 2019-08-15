@@ -1,40 +1,36 @@
 package pl.wojtasik.adrian.java.basic.note.dao;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import pl.wojtasik.adrian.java.basic.note.exception.NoteDatabaseAccessException;
 import pl.wojtasik.adrian.java.basic.note.exception.NoteException;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class DatabaseUtilsTest {
-    private Connection connection;
 
-    @After
-    public void tearDown() throws SQLException {
-        this.connection.close();
-    }
-
-    @Before
-    public void setUp() throws NoteException {
-        this.connection = DatabaseUtils.createConnection();
-    }
-
-   @Test
-    public void printTablesTest() throws NoteDatabaseAccessException {
-        DatabaseUtils.showTables(); //Jak?
+    @Test
+    public void givenGetConnection_whenInvokedTwice_thanHaveTheSameConnection() throws NoteException {
+        //Given
+        Connection connection1;
+        Connection connection2;
+        //When
+        connection1 = DatabaseUtils.getConnection();
+        connection2 = DatabaseUtils.getConnection();
+        //Than
+        assertEquals("Connections aren't equals", connection1, connection2);
     }
 
     @Test
-    public void closeConnectionTest() throws SQLException {
-        assertNotEquals(null, this.connection);
-        connection.close();
-        assertNull("Connection not closed", connection);
+    public void givenGetConnection_whenConnectionClose_thanConnectionIsClosedReturnTrue() throws NoteException, SQLException {
+        //Given
+        Connection connection = DatabaseUtils.getConnection();
+        //When
+        DatabaseUtils.closeConnection();
+        //Then
+        assertTrue("Connection is not closed", connection.isClosed());
     }
 
 
